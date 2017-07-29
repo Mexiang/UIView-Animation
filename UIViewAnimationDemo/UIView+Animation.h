@@ -1,7 +1,22 @@
-# UIView-Animation
-UIView类目扩展UIView的动画
+//
+//  UIView+Animation.h
+//  UIViewAnimationDemo
+//
+//  Created by Dry on 2017/7/29.
+//  Copyright © 2017年 Dry. All rights reserved.
+//
+//  这是对UIView进行扩展动画实现的方法，以方便项目中直接使用
+//  注释的参数后面的描述文字可能会包含参考数值等
+//  其中-(void)removeAnimationForKey:方法是移除layer上的动画的方法，执行完动画
+//  之后还应该调用此方法
+//
+//
 
-```
+
+#import <UIKit/UIKit.h>
+
+@interface UIView (Animation)
+
 #pragma mark - position
 /**
  震动动画
@@ -30,6 +45,15 @@ UIView类目扩展UIView的动画
                                         duration:(float)duration
                                     enlargeScale:(float)scaleValue
                                           forKey:(nonnull NSString *)key;
-```
-更多方法会持续更新，补充。
 
+
+
+/**
+ 移除
+
+ @param key 动画对应的key
+ */
+- (void)removeAnimationForKey:(nonnull NSString *)key;
+
+
+@end
